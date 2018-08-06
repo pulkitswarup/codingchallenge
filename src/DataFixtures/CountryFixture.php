@@ -17,11 +17,13 @@ class CountryFixture extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        for ($itr = 1; $itr <= 10; $itr++) {
-            $country = new Country();
-            $country->setName('Country ' . $itr);
-            $manager->persist($country);
-        }
-        $manager->flush();
+        // $country = new Country();
+        // $country->setId(2);
+        // $country->setName("Germany");
+        // $metadata = $manager->getClassMetadata(get_class($country));
+        // $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+        // $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        // $manager->persist($country);
+        // $manager->flush();
     }
 }

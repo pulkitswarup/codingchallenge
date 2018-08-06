@@ -62,9 +62,9 @@ class JobControllerTest extends WebTestCase
 
             ],
             [
-                ['title' => 'This is a sample title', 'description' => 'This is sample description', 'city' => 1, 'zip_code' => '23456', 'execute_at' => $datetime, 'category' => 1],
+                ['title' => 'This is a sample title', 'description' => 'This is sample description', 'city' => 1, 'zip_code' => '10115', 'execute_at' => $datetime, 'category' => 804040],
                 'status' => 201,
-                '{"id":1,"title":"This is a sample title","description":"This is sample description","zip_code":23456,"category":{"id":1,"name":"Category 1"}}'
+                '{"id":1,"title":"This is a sample title","description":"This is sample description","zip_code":10115,"category":{"id":804040,"name":"Sonstige Umzugsleistugen"}}'
             ]
         ];
     }

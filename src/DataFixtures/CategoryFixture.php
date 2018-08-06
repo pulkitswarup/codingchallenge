@@ -17,10 +17,22 @@ class CategoryFixture extends Fixture
      */
     public function load(ObjectManager $manager)
     {
-        for ($itr = 1; $itr <= 10; $itr++) {
-            $category = new Category();
-            $category->setName('Category '. $itr);
-            $manager->persist($category);
+        $categories = [
+            [804040, 'Sonstige Umzugsleistugen'],
+            [802030, 'Abtransport, Entsorgung und Entrümpelung'],
+            [411070, 'Fensterreinigung'],
+            [402020, 'Holzdielen schleifen'],
+            [108140, 'Kellersanierung'],
+        ];
+
+        foreach ($categories as $category) {
+            $entity = (new Category())
+                ->setId($category[0])
+                ->setName($category[1]);
+            $metadata = $manager->getClassMetadata(get_class($entity));
+            $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+            $manager->persist($entity);
         }
         $manager->flush();
     }
