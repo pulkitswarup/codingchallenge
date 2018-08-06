@@ -49,3 +49,6 @@ For more details refer [here](http://htmlpreview.github.io/?https://github.com/p
     ```
     $ docker-compose logs -f
     ```
+### Known Issues
+1. The project currently only implements Job Creation API, the code can further be expanded to incorporate other API/Functionalities
+2. There are still issues/bugs in the code, with respect to constraint validation.
