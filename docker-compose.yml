@@ -1,0 +1,53 @@
+version: "2"
+services:
+    proxy:
+      image: nginx:1.15-alpine
+      container_name: myhammer-proxy-latest
+      ports:
+          - "8080:80"
+      volumes_from:
+          - source:ro
+      volumes:
+          - ./docker/nginx:/etc/nginx/conf.d
+      labels:
+        project: myhammer
+      networks:
+        - myhammernet
+    source:
+        build:
+            context: ./
+            dockerfile: ./docker/source.dockerfile
+        container_name: myhammer-source-latest
+        working_dir: /app/myhammer
+        volumes:
+            - ./:/app/myhammer
+        environment:
+            - "DB_PORT=3306"
+            - "DB_HOST=database"
+        labels:
+          project: myhammer
+        networks:
+          - myhammernet
+    database:
+        image: mysql:5.7
+        container_name: myhammer-database-latest
+        volumes:
+          - dbdata:/var/lib/mysql
+        environment:
+          - "MYSQL_DATABASE=myhammer"
+          - "MYSQL_USER=myhammer"
+          - "MYSQL_PASSWORD=myhammer"
+          - "MYSQL_ROOT_PASSWORD=password"
+        ports:
+            - "3306:3306"
+        restart: always
+        labels:
+          project: myhammer
+        networks:
+          - myhammernet
+volumes:
+  dbdata:
+    driver: local
+networks:
+  myhammernet:
+    driver: bridge

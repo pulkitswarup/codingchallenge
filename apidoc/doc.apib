@@ -1,0 +1,56 @@
+FORMAT: 1A
+HOST: http://myhammer.local
+
+# My Hammer (Coding Challenge)
+
+API Resource related to My Hammer Coding Challenge
+
+# Group Jobs
+
+Resources related to Jobs in the API.
+
+## Jobs Collection [/api/1/jobs]
+
+### Create New Job [POST /api/1/jobs]
++ Request (application/json)
+    + Attributes
+        + title: `Lorem ipsum dolor sit amet, consectetur adipiscing elite.` (required, string)
+        + description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet magna vitae nisl pulvinar pellentesque. Pellentesque nec lorem commodo, dictum quam imperdiet, euismod nibh.` (required, string)
+        + zip_code: 10115 (required, number)
+        + execute_at: `2016-02-05 08:40:51` (required, string)
+        + category: 1 (required, number)
+        + city: 1 (required, number)
+
++ Response 201 (application/json)
+    + Attributes
+        - Include Job
+
+# Data Structures
+
+## Category (object)
+- id: 1 (number)
+- name: Lorem Ipsum (string)
+
+## Country (object)
+- id: 1 (number)
+- name: Germany (string)
+
+## City (object)
+- id: 1 (number)
+- country (Country) - Country of the job.
+- zip_code: 10115 (number)
+- name: Berlin (string)
+
+## Job (object)
++ id: 1 (number)
++ city (City) - City of the job.
++ category (Category) - Category of the job.
++ title: Lorem ipsum dolor sit amet, consectetur adipiscing elite. (string)
++ description: `Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Proin sit amet magna
+                vitae nisl pulvinar pellentesque. Pellentesque nec
+                lorem commodo, dictum quam imperdiet, euismod nibh.` (string)
++ zip_code: 10115 (number)
++ execute_at: `2016-02-05 08:40:51.620Z` (string)
++ created_at: `2016-02-05 08:40:51.620Z` (string)
++ updated_at: `2016-02-05 08:40:51.620Z` (string)
