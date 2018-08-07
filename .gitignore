@@ -9,3 +9,4 @@
 .phpunit
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+tests/coverage/
