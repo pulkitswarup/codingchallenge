@@ -1,6 +1,6 @@
 ## My Hammer (Coding Challenge)
 
-This project is part of coding challenge, with the requirements being to create an (Restful) API that would be used by the companies Angular Frontend for the Web and as well as by our native iOS and Android Apps.
+This project is part of coding challenge, with the requirements to create an API (Restful) that would be used by the companies Angular Frontend for the Web and as well as by our native iOS and Android Apps.
 
 ### Requirements
 - docker >= 18.0
