@@ -12,7 +12,7 @@ framework:
     #esi: true
     #fragments: true
     php_errors:
-        log: true
+        log: false
 
     templating: { engines: ['twig'] }
     cache:
@@ -32,3 +32,4 @@ framework:
     validation: { enable_annotations: true }
 sensio_framework_extra:
     view: { annotations: true }
+    router: { annotations: true }
