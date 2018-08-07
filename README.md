@@ -19,14 +19,13 @@ $ cd codingchallenge
 $ cp .env.dist .env
 $ docker-compose up -d --build
 ```
-*&#42; Please note: &nbsp;`./entrypoint.sh` script should automatically take care of the migrations and fixture while building the containers. However, in case of issue undermentioned commands can be used to manually setup the database & fixtures.*
 
-#### Setting up the database (Optional)
+#### Setting up the database
 ```
 $ docker exec -ti myhammer-source-latest bin/console doctrine:migrations:migrate
 ```
 
-#### Setting up fixtures (Optional)
+#### Setting up fixtures
 ```
 $ docker exec -ti myhammer-source-latest bin/console doctrine:fixtures:load
 ```
