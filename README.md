@@ -81,6 +81,10 @@ For more details refer [here](http://htmlpreview.github.io/?https://github.com/p
     # /etc/hosts
     127.0.0.1 myhammer.local
     ```
+4. Generating code coverage report:
+    ```
+    $ docker exec -ti myhammer-source-latest ./vendor/bin/simple-phpunit --coverage-html=tests/coverage
+    ```
 ### Known Issues
 1. There are still issues/bugs in the code, with respect to constraint validation.
 2. `EntityNotFoundException` is currently thrown with status code 500 instead of 404 (which would have been more suitable)
