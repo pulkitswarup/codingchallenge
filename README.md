@@ -28,7 +28,29 @@ $ docker exec -it myhammer-source-latest php composer.phar install
 
 #### Setting up the database
 ```bash
-$ docker exec -ti myhammer-source-latest bin/console doctrine:migrations:migrate
+$ # Run migrations
+$ docker exec -ti myhammer-source-latest bin/console doctrine:migrations:migrate -n
+$ # Check migrations status
+$ docker exec -ti myhammer-source-latest bin/console doctrine:migrations:status
+
+ == Configuration
+
+    >> Name:                                               Application Migrations
+    >> Database Driver:                                    pdo_mysql
+    >> Database Name:                                      myhammer
+    >> Configuration Source:                               manually configured
+    >> Version Table Name:                                 migration_versions
+    >> Version Column Name:                                version
+    >> Migrations Namespace:                               DoctrineMigrations
+    >> Migrations Directory:                               /app/myhammer/src/Migrations
+    >> Previous Version:                                   Already at first version
+    >> Current Version:                                    0
+    >> Next Version:                                       2018-08-07 21:23:00 (20180807212300)
+    >> Latest Version:                                     2018-08-07 21:23:00 (20180807212300)
+    >> Executed Migrations:                                1
+    >> Executed Unavailable Migrations:                    0
+    >> Available Migrations:                               1
+    >> New Migrations:                                     0
 ```
 
 #### Setting up fixtures
@@ -41,7 +63,7 @@ Once these steps are performed the application is up and running and can be acce
 ### Testing
 The tests can be run using the following command:
 ```bash
-$ docker exec -ti myhammer-source-latest bin/phpunit
+$ docker exec -ti myhammer-source-latest ./vendor/bin/simple-phpunit
 ```
 ### API Reference
 For more details refer [here](http://htmlpreview.github.io/?https://github.com/pulkitswarup/codingchallenge/blob/master/apidoc/doc.html?rnd=1)

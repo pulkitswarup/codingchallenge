@@ -4,7 +4,7 @@ services:
       image: nginx:1.15-alpine
       container_name: myhammer-proxy-latest
       ports:
-          - "8080:80"
+          - "8888:80"
       volumes_from:
           - source:ro
       volumes:
