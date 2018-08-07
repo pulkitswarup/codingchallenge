@@ -27,7 +27,7 @@ $ docker exec -ti myhammer-source-latest bin/console doctrine:migrations:migrate
 
 #### Setting up fixtures
 ```bash
-$ docker exec -ti myhammer-source-latest bin/console doctrine:fixtures:load
+$ docker exec -ti myhammer-source-latest bin/console doctrine:fixtures:load -n
 ```
 
 Once these steps are performed the application is up and running and can be accessed @ http://localhost:8888
