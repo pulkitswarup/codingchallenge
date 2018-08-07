@@ -6,6 +6,9 @@ use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group functional
+ */
 class JobControllerTest extends WebTestCase
 {
     public function setUp()

@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://myhammer.local
+HOST: http://myhammer.local:8888
 
 # My Hammer (Coding Challenge)
 
@@ -8,6 +8,62 @@ API Resource related to My Hammer Coding Challenge
 # Group Jobs
 
 Resources related to Jobs in the API.
+
+## City Collection [/api/1/city]
+
+## Get All Cities [GET /api/1/city]
+
++ Response 200 (application/json)
+    + Attributes (array, fixed)
+        + (object)
+            + Include City
++ Response 500 (application/json)
+    + Attributes (object, fixed)
+        + error (object)
+            + code: 500 (number)
+            + message: Internal Server Error (string)
+
+## Get City [GET /api/1/city/{id}]
++ Parameters
+    + id (number)
+
++ Response 200 (application/json)
+    + Attributes
+        + Include City
+
++ Response 500 (application/json)
+    + Attributes (object, fixed)
+        + error (object)
+            + code: 500 (number)
+            + message: Internal Server Error (string)
+
+## Category Collection [/api/1/category]
+
+## Get All Categories [GET /api/1/category]
+
++ Response 200 (application/json)
+    + Attributes (array, fixed)
+        + (object)
+            + Include Category
++ Response 500 (application/json)
+    + Attributes (object, fixed)
+        + error (object)
+            + code: 500 (number)
+            + message: Internal Server Error (string)
+
+## Get Category [GET /api/1/category/{id}]
++ Parameters
+    + id (number)
+
++ Response 200 (application/json)
+    + Attributes
+        + Include Category
+
++ Response 500 (application/json)
+    + Attributes (object, fixed)
+        + error (object)
+            + code: 500 (number)
+            + message: Internal Server Error (string)
 
 ## Jobs Collection [/api/1/jobs]
 
@@ -24,6 +80,18 @@ Resources related to Jobs in the API.
 + Response 201 (application/json)
     + Attributes
         - Include Job
+
++ Response 400 (application/json)
+    + Attributes (array, fixed)
+        + (object)
+            + property_path: title (string)
+            + message: This value should not be blank (string)
+
++ Response 500 (application/json)
+    + Attributes (object, fixed)
+        + error (object)
+            + code: 500 (number)
+            + message: Internal Server Error (string)
 
 # Data Structures
 
