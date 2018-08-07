@@ -17,7 +17,13 @@ $ git clone https://github.com/pulkitswarup/codingchallenge.git
 ```bash
 $ cd codingchallenge
 $ cp .env.dist .env
+$ mkdir -p var/log var/cache && chmod -R 777 var/
 $ docker-compose up -d --build
+```
+
+#### Setting up dependencies/libraries
+```bash
+$ docker exec -it myhammer-source-latest php composer.phar install
 ```
 
 #### Setting up the database
