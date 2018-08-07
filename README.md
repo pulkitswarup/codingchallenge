@@ -38,7 +38,7 @@ The tests can be run using the following command:
 $ docker exec -ti myhammer-source-latest bin/phpunit
 ```
 ### API Reference
-For more details refer [here](http://htmlpreview.github.io/?https://github.com/pulkitswarup/codingchallenge/blob/master/apidoc/doc.html)
+For more details refer [here](http://htmlpreview.github.io/?https://github.com/pulkitswarup/codingchallenge/blob/master/apidoc/doc.html?rnd=1)
 ### Additional Information
 1. In order, to gain access to the database the following command can be used:
     ```bash
