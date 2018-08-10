@@ -45,9 +45,11 @@ class CategoryControllerTest extends WebTestCase
         );
     }
 
+    /**
+     * @expectedException Doctrine\ORM\EntityNotFoundException
+     */
     public function testCategoryNotFound()
     {
-        $this->expectException(EntityNotFoundException::class);
         $response = $this->get('/api/1/category/22', []);
         $this->assertEquals(500, $response->getStatusCode());
         $this->assertArraySubset(

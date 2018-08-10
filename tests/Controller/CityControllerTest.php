@@ -43,9 +43,11 @@ class CityControllerTest extends WebTestCase
         );
     }
 
+    /**
+     * @expectedException Doctrine\ORM\EntityNotFoundException
+     */
     public function testCityNotFound()
     {
-        $this->expectException(EntityNotFoundException::class);
         $response = $this->get('/api/1/city/22', []);
         $this->assertEquals(500, $response->getStatusCode());
         $this->assertArraySubset(
